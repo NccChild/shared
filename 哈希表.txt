@@ -27,12 +27,30 @@
 如果想自己构建属于自己的哈希表需要使用hash_map 
 
 
-在C++中：容器类map和unordered_map已经封装好。
-	两者之间的区别是 map是有序的，二者的API函数是一样的
+在C++中：容器类map和unordered_map已经封装好。  最底层的是pair，引入<iostream>即可使用  本质都是pair
+  	两者之间的区别是 map是有序的，二者的API函数是一样的
 					为了map的有序，map牺牲了必要的速度，在insert和access是O(logn)
 					unordered_map的速度保持在O（1） //unordered_map的使用注意 c++11 编译器
 	
-	进阶：虽然map和unordered_map，从时间上来看，unordered_map远远稳定于map
-		  map的背后逻辑是红黑树
-		  unordered_map的背后逻辑是哈希表（简单的hash_map）
+	进阶：1）虽然map和unordered_map，从时间上来看，unordered_map远远稳定于map
+			map的背后逻辑是红黑树
+			unordered_map的背后逻辑是哈希表（简单的hash_map）
 		  
+			区分mulitimap：
+			std::unordered_map和std::multimap都是C++ STL中关联式容器的一种。它们的区别在于：
+
+			数据结构不同：std::unordered_map是基于哈希表实现的，而std::multimap是基于红黑树实现的。
+			元素的插入顺序不同：std::unordered_map中元素的插入顺序是无序的，而std::multimap中元素的插入顺序是按照键值排序的。
+			键值的唯一性不同：std::unordered_map中的键值是唯一的，而std::multimap中的键值可以重复。
+		  2）c++STL标准库为map容器配备的是双向迭代器。
+					这意味着，map 容器迭代器只能进行 ++p、p++、--p、p--、*p 操作，并且迭代器之间只能使用 == 或者 != 运算符进行比较。
+			
+		  3）map 类模板中对[ ]运算符进行了重载
+		  这意味着，类似于借助数组下标可以直接访问数组中元素，通过指定的键，我们可以轻松获取 map 容器中该键对应的值。
+		  反之，若当前 map 容器中没有包含该指定键的键值对，则此时使用 [ ] 运算符将不再是访问容器中的元素，而变成了向该 map 容器中增添一个键值对
+		  
+		  4）一定要注意map是有序的
+			当使用 insert() 方法向 map 容器的指定位置插入新键值对时，其底层会先将新键值对插入到容器的指定位置
+			如果其破坏了 map 容器的有序性，该容器会对新键值对的位置进行调整。
+		  
+		  5）multimap中没有重载【】和at（）函数   重要！！！
