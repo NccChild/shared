@@ -1,0 +1,9 @@
+容器适配器是一个封装了序列容器的类模板，它在一般序列容器的基础上提供了一些不同的功能。
+
+之所以称作适配器类，是因为它可以通过适配容器现有的接口来提供不同的功能。
+
+插入迭代器适配器：
+	back_insert_iterator： 前提提供：push_back（）成员方法的容器（vector，deque，list）
+	front_insert_iterator：前提提供： push_front() 成员方法的容器（list，deque ，forward_list）、
+	insert_iterator： 所有容器都提供insert（）；
+	
