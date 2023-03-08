@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/Users/DELL/Desktop/thread_pool-master/build",
+  "command": "D:\\code\\environment\\gcc\\mingw64\\bin\\g++.exe   -g -std=gnu++14 -o CMakeFiles\\thread_pool.dir\\main.cpp.obj -c C:\\Users\\DELL\\Desktop\\thread_pool-master\\main.cpp",
+  "file": "C:/Users/DELL/Desktop/thread_pool-master/main.cpp",
+  "output": "CMakeFiles/thread_pool.dir/main.cpp.obj"
+}
+]

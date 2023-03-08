@@ -1,0 +1,3 @@
+C:/Users/DELL/Desktop/thread_pool-master/build/CMakeFiles/thread_pool.dir
+C:/Users/DELL/Desktop/thread_pool-master/build/CMakeFiles/edit_cache.dir
+C:/Users/DELL/Desktop/thread_pool-master/build/CMakeFiles/rebuild_cache.dir
